@@ -27,6 +27,6 @@ merely educational
 
 Mendoza Gonzalez Angel - angel.mendoza0284@alumnos.udg.mx
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/github_username/repo_name](https://github.com/angel-mendoza-0284/Programa_6)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
