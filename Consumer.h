@@ -2,10 +2,24 @@
 #include "Node.h"
 class Consumer
 {
-	Consumer();
+public:
+	//consumer
+	Consumer(int minACT, int maxACT, int minSLEEP, int maxSLEEP);
 	int Consume();
-	string verStatus();
+	int Sleep();
+	//status
+	void modStatus(int owo);
+	int verStatus();
+	//timer
+	void modTimer();
+	int verTimer();
 private:
-	string status;
+	int status;
+	int timer;
+
+	int minACT;
+	int maxACT;
+	int minSLEEP;
+	int maxSLEEP;
 };
 

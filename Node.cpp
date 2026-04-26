@@ -1,6 +1,7 @@
 #include "Node.h"
-Node::Node()
+Node::Node(int owo)
 {
+	id = owo;
 	next = nullptr;
 	iwi = false;
 }
@@ -11,4 +12,8 @@ void Node::Modiwi()
 bool Node::Veriwi()
 {
 	return iwi;
+}
+int Node::Verid()
+{
+	return id;
 }

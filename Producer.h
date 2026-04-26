@@ -3,10 +3,23 @@
 class Producer
 {
 public:
-	Producer();
+	//producer
+	Producer(int minACT, int maxACT, int minSLEEP, int maxSLEEP);
 	int Produce();
-	string verStatus();
+	int Sleep();
+	//status
+	void modStatus(int owo);
+	int verStatus();
+	//timer
+	void modTimer();
+	int verTimer();
 private:
-	string status;
+	int status;
+	int timer;
+
+	int minACT;
+	int maxACT;
+	int minSLEEP;
+	int maxSLEEP;
 };
 

@@ -5,10 +5,8 @@ static const wxColour CLR_LBLUE(99, 179, 237);
 static const wxColour CLR_TXT(30, 30, 30);
 
 FrameIntro::FrameIntro() : wxFrame(nullptr, wxID_ANY, "Productor-Consumidor",
-    wxDefaultPosition, wxSize(700, 700))
+    wxDefaultPosition, wxSize(320, 250))
 {
-    SetBackgroundColour(CLR_BG);
-
     wxPanel* panel = new wxPanel(this);
     panel->SetBackgroundColour(CLR_BG);
 
@@ -27,10 +25,22 @@ FrameIntro::FrameIntro() : wxFrame(nullptr, wxID_ANY, "Productor-Consumidor",
     wxFont fontSub(8, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
     subtitle->SetFont(fontSub);
     subtitle->SetForegroundColour(CLR_TXT);
-
+    //---------------------------------------lbl---------------------------------------
+    wxStaticText* lbl_nodes = new wxStaticText(panel, wxID_ANY, "Numero de Slots:",
+    wxPoint(60, 90), wxDefaultSize);
+    wxFont fontLbl(8, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
+    lbl_nodes->SetFont(fontLbl);
+    lbl_nodes->SetForegroundColour(CLR_TXT);
+    //---------------------------------------Spincrtl---------------------------------------
+    n_slots = new wxSpinCtrl(panel, wxID_ANY, "", wxPoint(60, 110),
+        wxSize(200, 28), 16384L, 1, 50, 18);
+    wxFont fontSpin(9, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
+    n_slots->SetFont(fontSpin);
+    n_slots->SetBackgroundColour(wxColour(150, 150, 150));
+    n_slots->SetForegroundColour(CLR_TXT);
     // ---------------------------------------BOTON---------------------------------------
     wxButton* button = new wxButton(panel, wxID_ANY, "[ INICIAR ]",
-        wxPoint(60, 110), wxSize(200, 32));
+        wxPoint(60, 140), wxSize(200, 32));
     wxFont fontBtn(9, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD);
     button->SetFont(fontBtn);
     button->SetBackgroundColour(CLR_LBLUE);
@@ -43,8 +53,7 @@ FrameIntro::FrameIntro() : wxFrame(nullptr, wxID_ANY, "Productor-Consumidor",
 
 void FrameIntro::Create_FrameEXE(wxCommandEvent& event)
 {
-    int n_slots = 18;
-    FrameEXE* newFrame = new FrameEXE(n_slots);
+    FrameEXE* newFrame = new FrameEXE(n_slots->GetValue());
     newFrame->Center();
     newFrame->Show();
     this->Close();
